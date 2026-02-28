@@ -1,0 +1,30 @@
+# Schwab API
+schwab-py>=1.4.0
+httpx>=0.25.0
+
+# Reddit
+praw>=7.7.0
+
+# Sentiment Analysis
+vaderSentiment>=3.3.2
+transformers>=4.35.0
+torch>=2.1.0
+
+# Technical Analysis
+pandas>=2.1.0
+numpy>=1.25.0
+ta>=0.11.0
+
+# News
+newsapi-python>=0.2.7
+feedparser>=6.0.10
+beautifulsoup4>=4.12.0
+requests>=2.31.0
+
+# Utilities
+python-dotenv>=1.0.0
+schedule>=1.2.0
+colorlog>=6.7.0
+
+# Data
+yfinance>=0.2.30
