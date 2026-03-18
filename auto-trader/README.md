@@ -1,130 +1,93 @@
-# 🤖 Automated Options Trading Bot with Sentiment Analysis
+# Schwab AI Trading Bot — Setup Guide
 
-## ⚠️ DISCLAIMER
-**This is NOT financial advice. This tool is for educational and experimental purposes only.**
-- Options trading involves significant risk of loss
-- Past performance does not guarantee future results
-- Always paper trade first before using real money
-- The developers are not responsible for any financial losses
-
-## Overview
-
-This system combines:
-- **Schwab Trader API** (formerly TD Ameritrade) for options trading execution
-- **Reddit sentiment analysis** (r/wallstreetbets, r/options, r/stocks)
-- **StockTwits sentiment** via their API
-- **News sentiment** via NewsAPI and financial RSS feeds
-- **Technical indicators** (RSI, MACD, Bollinger Bands, IV Rank)
-- **AI-powered signal generation** combining all data sources
-
-## Architecture
+## Project Structure
 
 ```
-┌─────────────────┐   ┌─────────────────┐   ┌─────────────────┐
-│  Reddit API     │   │  StockTwits API  │   │  NewsAPI        │
-│  (PRAW)         │   │                  │   │  + RSS Feeds    │
-└────────┬────────┘   └────────┬─────────┘   └────────┬────────┘
-         │                     │                      │
-         ▼                     ▼                      ▼
-┌──────────────────────────────────────────────────────────────┐
-│                  Sentiment Aggregator                        │
-│  • NLP scoring (VADER + FinBERT)                             │
-│  • Volume-weighted sentiment                                 │
-│  • Trend detection                                           │
-└────────────────────────┬─────────────────────────────────────┘
-                         │
-                         ▼
-┌──────────────────────────────────────────────────────────────┐
-│                  Signal Generator                            │
-│  • Combines sentiment + technicals                           │
-│  • Risk scoring                                              │
-│  • Options strategy selector                                 │
-└────────────────────────┬─────────────────────────────────────┘
-                         │
-                         ▼
-┌──────────────────────────────────────────────────────────────┐
-│              Schwab Trader API Executor                       │
-│  • Paper trading mode (default)                              │
-│  • Position sizing & risk management                         │
-│  • Order execution & monitoring                              │
-└──────────────────────────────────────────────────────────────┘
+├── .env.example        # Copy to .env and fill in your credentials
+├── auth.py             # OAuth2 flow + token management
+├── market_data.py      # Quotes, price history, option chains
+├── order_executor.py   # Order placement with risk guards + dry-run
+├── bot.py              # Main loop: signals → risk checks → execution
+├── requirements.txt
+├── tokens/             # Auto-created — stores your OAuth token (gitignore this)
+└── logs/               # Auto-created — daily trade log (JSONL)
 ```
 
-## Setup
+---
 
-### 1. Install Dependencies
+## Quick Start
+
+### 1. Install dependencies
 ```bash
+python -m venv venv
+source venv/bin/activate        # Windows: venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-### 2. Get API Keys
-
-#### Schwab Trader API
-1. Go to https://developer.schwab.com
-2. Register for an individual developer account
-3. Create an app and get your App Key and Secret
-4. Set callback URL to `https://127.0.0.1:8080/callback`
-
-#### Reddit API
-1. Go to https://www.reddit.com/prefs/apps
-2. Create a "script" application
-3. Note down client_id and client_secret
-
-#### StockTwits
-1. Go to https://api.stocktwits.com/developers
-2. Register an app (or use public endpoints)
-
-#### NewsAPI
-1. Go to https://newsapi.org
-2. Get a free API key
-
-### 3. Configure Environment
+### 2. Set up credentials
 ```bash
 cp .env.example .env
-# Edit .env with your API keys
+# Fill in SCHWAB_APP_KEY, SCHWAB_APP_SECRET, TRADING_ACCOUNT_NUMBER
 ```
 
-### 4. Run
+Get your key/secret from:
+https://developer.schwab.com/dashboard/apps → View Details
+
+### 3. Complete OAuth (first time only)
 ```bash
-# Paper trading mode (recommended to start)
-python main.py --mode paper
+python auth.py
+```
+- A browser window opens. Log in with your **Schwab brokerage** credentials (not dev portal).
+- You'll be redirected to a localhost URL. schwab-py captures it automatically.
+- Token is saved to `tokens/schwab_token.json`. Do not share this file.
 
-# Live trading (use with extreme caution!)
-python main.py --mode live
+### 4. Run the bot in dry-run mode
+```bash
+python bot.py
+```
+`DRY_RUN=true` in your `.env` means orders are validated but never sent.
+Check the output and `logs/trade_YYYYMMDD.jsonl` to verify signals.
 
-# Analysis only (no trades)
-python main.py --mode analyze
+### 5. Test individual modules
+```bash
+python market_data.py    # Fetch a quote + price history
+python order_executor.py # Test a single dry-run order
 ```
 
-## Configuration
+---
 
-Edit `config.py` to customize:
-- Watchlist of tickers
-- Risk parameters (max position size, max loss, etc.)
-- Sentiment thresholds
-- Technical indicator parameters
-- Options strategy preferences
+## Safety Checklist Before Going Live
 
-## File Structure
-```
-├── main.py                  # Entry point & orchestrator
-├── config.py                # All configuration
-├── requirements.txt         # Dependencies
-├── .env.example             # Environment variable template
-├── sentiment/
-│   ├── reddit_sentiment.py  # Reddit scraping & analysis
-│   ├── stocktwits.py        # StockTwits sentiment
-│   ├── news_sentiment.py    # News & RSS sentiment
-│   └── aggregator.py        # Combines all sentiment sources
-├── technicals/
-│   └── indicators.py        # Technical analysis
-├── trading/
-│   ├── schwab_client.py     # Schwab API wrapper
-│   ├── options_strategy.py  # Options strategy selection
-│   ├── risk_manager.py      # Risk management
-│   └── executor.py          # Order execution
-├── signals/
-│   └── signal_generator.py  # Signal generation engine
-└── utils/
-    └── logger.py            # Logging utilities
-```
+- [ ] Run dry-run for at least 5 trading days and review all signals
+- [ ] Verify `TRADING_ACCOUNT_NUMBER` is correct
+- [ ] Set `MAX_TRADE_VALUE_USD` to an amount you're comfortable losing entirely
+- [ ] Implement real P&L tracking in `RiskGuard.check_daily_loss()`
+- [ ] Wire in your actual sentiment scores in `get_sentiment_score()`
+- [ ] Set `DRY_RUN=false` in `.env` only when confident
+
+---
+
+## Key Files to Customize
+
+| File | What to add |
+|------|-------------|
+| `bot.py` → `get_sentiment_score()` | Your Reddit/Twitter/StockTwits sentiment pipeline |
+| `bot.py` → `generate_signal()` | Tune RSI/MACD/BB thresholds or swap in ML model |
+| `order_executor.py` → `RiskGuard.check_daily_loss()` | Wire in real P&L from trade log |
+| `bot.py` → `WATCHLIST` | Your target symbols |
+
+---
+
+## Token Refresh
+schwab-py handles token refresh automatically. The access token expires every 30 minutes,
+but the library refreshes it transparently. The refresh token lasts 7 days — after that,
+you'll need to re-run `python auth.py` to re-authenticate.
+
+---
+
+## Deployment (Cloud)
+To run on a schedule without your machine:
+1. Push this project to GitHub
+2. Deploy on Google Cloud Run or a small Compute Engine VM
+3. Use Cloud Scheduler to trigger `python bot.py` on market open (9:30 AM ET weekdays)
+4. Store `.env` values as Secret Manager secrets, not as plain files

@@ -1,0 +1,106 @@
+2026-03-14 12:45:47,018 | INFO | Loading token from file tokens/schwab_token.json
+2026-03-14 12:45:47,411 | INFO | HTTP Request: GET https://api.schwabapi.com/trader/v1/accounts/accountNumbers "HTTP/1.1 200 OK"
+2026-03-14 12:46:07,936 | INFO | Loading token from file tokens/schwab_token.json
+2026-03-14 12:46:08,257 | INFO | HTTP Request: GET https://api.schwabapi.com/trader/v1/accounts/accountNumbers "HTTP/1.1 200 OK"
+2026-03-14 12:49:32,855 | INFO | Loading token from file tokens/schwab_token.json
+2026-03-14 12:49:33,125 | INFO | HTTP Request: GET https://api.schwabapi.com/trader/v1/accounts/accountNumbers "HTTP/1.1 200 OK"
+2026-03-14 12:49:33,126 | INFO | Using account: ...6039
+2026-03-14 12:49:33,126 | INFO | [DRY RUN] Processing signal: BUY 1x SPY | RSI oversold (28) + positive sentiment score (0.72)
+2026-03-14 12:49:33,285 | INFO | HTTP Request: GET https://api.schwabapi.com/marketdata/v1/SPY/quotes "HTTP/1.1 200 OK"
+2026-03-14 12:49:33,286 | WARNING | Trade REJECTED: Trade value $663.10 exceeds max $500.00. Reduce quantity to 0 shares.
+2026-03-14 12:53:17,702 | INFO | Loading token from file tokens/schwab_token.json
+2026-03-14 12:53:18,234 | INFO | HTTP Request: GET https://api.schwabapi.com/trader/v1/accounts/accountNumbers "HTTP/1.1 200 OK"
+2026-03-14 12:53:18,234 | INFO | Using account: ...6039
+2026-03-14 12:53:18,454 | INFO | HTTP Request: GET https://api.schwabapi.com/marketdata/v1/pricehistory?symbol=SPY&periodType=year&frequencyType=daily&frequency=1&startDate=1768326798234&endDate=1773507198234 "HTTP/1.1 200 OK"
+2026-03-14 12:53:18,653 | INFO | HTTP Request: GET https://api.schwabapi.com/marketdata/v1/SPY/quotes "HTTP/1.1 200 OK"
+2026-03-14 12:53:18,661 | INFO | SPY | RSI=34.24 | MACD_hist=-1.9978 | BB%B=-0.1197 | Sentiment=0.0
+2026-03-14 12:53:19,053 | INFO | HTTP Request: GET https://api.schwabapi.com/marketdata/v1/pricehistory?symbol=QQQ&periodType=year&frequencyType=daily&frequency=1&startDate=1768326798661&endDate=1773507198661 "HTTP/1.1 200 OK"
+2026-03-14 12:53:19,263 | INFO | HTTP Request: GET https://api.schwabapi.com/marketdata/v1/QQQ/quotes "HTTP/1.1 200 OK"
+2026-03-14 12:53:19,265 | INFO | QQQ | RSI=44.82 | MACD_hist=-0.5843 | BB%B=-0.0529 | Sentiment=0.0
+2026-03-14 12:53:19,479 | INFO | HTTP Request: GET https://api.schwabapi.com/marketdata/v1/pricehistory?symbol=AAPL&periodType=year&frequencyType=daily&frequency=1&startDate=1768326799265&endDate=1773507199265 "HTTP/1.1 200 OK"
+2026-03-14 12:53:19,702 | INFO | HTTP Request: GET https://api.schwabapi.com/marketdata/v1/AAPL/quotes "HTTP/1.1 200 OK"
+2026-03-14 12:53:19,706 | INFO | AAPL | RSI=29.91 | MACD_hist=-1.5894 | BB%B=-0.0352 | Sentiment=0.0
+2026-03-14 12:53:20,181 | INFO | HTTP Request: GET https://api.schwabapi.com/marketdata/v1/pricehistory?symbol=MSFT&periodType=year&frequencyType=daily&frequency=1&startDate=1768326799706&endDate=1773507199706 "HTTP/1.1 200 OK"
+2026-03-14 12:53:20,693 | INFO | HTTP Request: GET https://api.schwabapi.com/marketdata/v1/MSFT/quotes "HTTP/1.1 200 OK"
+2026-03-14 12:53:20,697 | INFO | MSFT | RSI=59.2 | MACD_hist=1.988 | BB%B=0.3205 | Sentiment=0.0
+2026-03-16 00:26:44,923 | INFO | Loading token from file tokens/schwab_token.json
+2026-03-16 00:26:45,515 | INFO | HTTP Request: POST https://api.schwabapi.com/v1/oauth/token "HTTP/1.1 200 OK"
+2026-03-16 00:26:45,515 | INFO | Updating token to file tokens/schwab_token.json
+2026-03-16 00:26:45,718 | INFO | HTTP Request: GET https://api.schwabapi.com/trader/v1/accounts/accountNumbers "HTTP/1.1 200 OK"
+2026-03-16 00:26:45,719 | INFO | Using account: ...6039
+2026-03-16 00:26:45,908 | INFO | HTTP Request: GET https://api.schwabapi.com/marketdata/v1/pricehistory?symbol=SPY&periodType=year&frequencyType=daily&frequency=1&startDate=1768454805719&endDate=1773635205719 "HTTP/1.1 200 OK"
+2026-03-16 00:26:46,073 | INFO | HTTP Request: GET https://api.schwabapi.com/marketdata/v1/SPY/quotes "HTTP/1.1 200 OK"
+2026-03-16 00:26:46,809 | INFO | SPY | RSI=34.24 | MACD_hist=-2.0224 | BB%B=-0.1197 | Sentiment=0.1156
+2026-03-16 00:26:46,994 | INFO | HTTP Request: GET https://api.schwabapi.com/marketdata/v1/pricehistory?symbol=QQQ&periodType=year&frequencyType=daily&frequency=1&startDate=1768454806810&endDate=1773635206810 "HTTP/1.1 200 OK"
+2026-03-16 00:26:47,180 | INFO | HTTP Request: GET https://api.schwabapi.com/marketdata/v1/QQQ/quotes "HTTP/1.1 200 OK"
+2026-03-16 00:26:47,529 | INFO | QQQ | RSI=44.82 | MACD_hist=-0.6596 | BB%B=-0.0529 | Sentiment=0.0936
+2026-03-16 00:26:47,706 | INFO | HTTP Request: GET https://api.schwabapi.com/marketdata/v1/pricehistory?symbol=AAPL&periodType=year&frequencyType=daily&frequency=1&startDate=1768454807530&endDate=1773635207530 "HTTP/1.1 200 OK"
+2026-03-16 00:26:47,880 | INFO | HTTP Request: GET https://api.schwabapi.com/marketdata/v1/AAPL/quotes "HTTP/1.1 200 OK"
+2026-03-16 00:26:48,363 | INFO | AAPL | RSI=29.91 | MACD_hist=-1.641 | BB%B=-0.0352 | Sentiment=0.2022
+2026-03-16 00:26:48,575 | INFO | HTTP Request: GET https://api.schwabapi.com/marketdata/v1/pricehistory?symbol=MSFT&periodType=year&frequencyType=daily&frequency=1&startDate=1768454808363&endDate=1773635208363 "HTTP/1.1 200 OK"
+2026-03-16 00:26:48,780 | INFO | HTTP Request: GET https://api.schwabapi.com/marketdata/v1/MSFT/quotes "HTTP/1.1 200 OK"
+2026-03-16 00:26:49,163 | INFO | MSFT | RSI=59.2 | MACD_hist=1.7402 | BB%B=0.3205 | Sentiment=0.2785
+2026-03-16 00:32:36,253 | INFO | Loading token from file tokens/schwab_token.json
+2026-03-16 00:32:36,598 | INFO | HTTP Request: GET https://api.schwabapi.com/trader/v1/accounts/accountNumbers "HTTP/1.1 200 OK"
+2026-03-16 00:32:36,598 | INFO | Using account: ...6039
+2026-03-16 00:32:36,806 | INFO | HTTP Request: GET https://api.schwabapi.com/marketdata/v1/pricehistory?symbol=SPY&periodType=year&frequencyType=daily&frequency=1&startDate=1768455156598&endDate=1773635556598 "HTTP/1.1 200 OK"
+2026-03-16 00:32:36,998 | INFO | HTTP Request: GET https://api.schwabapi.com/marketdata/v1/SPY/quotes "HTTP/1.1 200 OK"
+2026-03-16 00:32:37,627 | INFO | SPY | RSI=34.24 | MACD_hist=-2.0224 | BB%B=-0.1197 | Sentiment=0.1156
+2026-03-16 00:32:37,825 | INFO | HTTP Request: GET https://api.schwabapi.com/marketdata/v1/pricehistory?symbol=QQQ&periodType=year&frequencyType=daily&frequency=1&startDate=1768455157627&endDate=1773635557627 "HTTP/1.1 200 OK"
+2026-03-16 00:32:38,010 | INFO | HTTP Request: GET https://api.schwabapi.com/marketdata/v1/QQQ/quotes "HTTP/1.1 200 OK"
+2026-03-16 00:32:38,363 | INFO | QQQ | RSI=44.82 | MACD_hist=-0.6596 | BB%B=-0.0529 | Sentiment=0.0936
+2026-03-16 00:32:38,573 | INFO | HTTP Request: GET https://api.schwabapi.com/marketdata/v1/pricehistory?symbol=AAPL&periodType=year&frequencyType=daily&frequency=1&startDate=1768455158363&endDate=1773635558363 "HTTP/1.1 200 OK"
+2026-03-16 00:32:38,743 | INFO | HTTP Request: GET https://api.schwabapi.com/marketdata/v1/AAPL/quotes "HTTP/1.1 200 OK"
+2026-03-16 00:32:39,097 | INFO | AAPL | RSI=29.91 | MACD_hist=-1.641 | BB%B=-0.0352 | Sentiment=0.2022
+2026-03-16 00:32:39,306 | INFO | HTTP Request: GET https://api.schwabapi.com/marketdata/v1/pricehistory?symbol=MSFT&periodType=year&frequencyType=daily&frequency=1&startDate=1768455159097&endDate=1773635559097 "HTTP/1.1 200 OK"
+2026-03-16 00:32:39,489 | INFO | HTTP Request: GET https://api.schwabapi.com/marketdata/v1/MSFT/quotes "HTTP/1.1 200 OK"
+2026-03-16 00:32:39,823 | INFO | MSFT | RSI=59.2 | MACD_hist=1.7402 | BB%B=0.3205 | Sentiment=0.2785
+2026-03-16 00:33:37,347 | INFO | Loading token from file tokens/schwab_token.json
+2026-03-16 00:33:37,650 | INFO | HTTP Request: GET https://api.schwabapi.com/trader/v1/accounts/accountNumbers "HTTP/1.1 200 OK"
+2026-03-16 00:33:37,651 | INFO | Using account: ...6039
+2026-03-16 00:33:37,833 | INFO | HTTP Request: GET https://api.schwabapi.com/marketdata/v1/pricehistory?symbol=SPY&periodType=year&frequencyType=daily&frequency=1&startDate=1768455217651&endDate=1773635617651 "HTTP/1.1 200 OK"
+2026-03-16 00:33:38,023 | INFO | HTTP Request: GET https://api.schwabapi.com/marketdata/v1/SPY/quotes "HTTP/1.1 200 OK"
+2026-03-16 00:33:38,613 | INFO | SPY | RSI=34.24 | MACD_hist=-2.0224 | BB%B=-0.1197 | Sentiment=0.1156
+2026-03-16 00:33:38,785 | INFO | HTTP Request: GET https://api.schwabapi.com/marketdata/v1/pricehistory?symbol=QQQ&periodType=year&frequencyType=daily&frequency=1&startDate=1768455218613&endDate=1773635618613 "HTTP/1.1 200 OK"
+2026-03-16 00:33:38,948 | INFO | HTTP Request: GET https://api.schwabapi.com/marketdata/v1/QQQ/quotes "HTTP/1.1 200 OK"
+2026-03-16 00:33:39,258 | INFO | QQQ | RSI=44.82 | MACD_hist=-0.6596 | BB%B=-0.0529 | Sentiment=0.0936
+2026-03-16 00:33:39,456 | INFO | HTTP Request: GET https://api.schwabapi.com/marketdata/v1/pricehistory?symbol=AAPL&periodType=year&frequencyType=daily&frequency=1&startDate=1768455219258&endDate=1773635619258 "HTTP/1.1 200 OK"
+2026-03-16 00:33:39,614 | INFO | HTTP Request: GET https://api.schwabapi.com/marketdata/v1/AAPL/quotes "HTTP/1.1 200 OK"
+2026-03-16 00:33:39,927 | INFO | AAPL | RSI=29.91 | MACD_hist=-1.641 | BB%B=-0.0352 | Sentiment=0.2022
+2026-03-16 00:33:40,240 | INFO | HTTP Request: GET https://api.schwabapi.com/marketdata/v1/pricehistory?symbol=MSFT&periodType=year&frequencyType=daily&frequency=1&startDate=1768455219928&endDate=1773635619928 "HTTP/1.1 200 OK"
+2026-03-16 00:33:40,410 | INFO | HTTP Request: GET https://api.schwabapi.com/marketdata/v1/MSFT/quotes "HTTP/1.1 200 OK"
+2026-03-16 00:33:40,744 | INFO | MSFT | RSI=59.2 | MACD_hist=1.7402 | BB%B=0.3205 | Sentiment=0.2785
+2026-03-16 00:34:28,616 | INFO | Loading token from file tokens/schwab_token.json
+2026-03-16 00:34:28,960 | INFO | HTTP Request: GET https://api.schwabapi.com/trader/v1/accounts/accountNumbers "HTTP/1.1 200 OK"
+2026-03-16 00:34:28,960 | INFO | Using account: ...6039
+2026-03-16 00:34:29,150 | INFO | HTTP Request: GET https://api.schwabapi.com/marketdata/v1/pricehistory?symbol=SPY&periodType=year&frequencyType=daily&frequency=1&startDate=1768455268960&endDate=1773635668960 "HTTP/1.1 200 OK"
+2026-03-16 00:34:29,324 | INFO | HTTP Request: GET https://api.schwabapi.com/marketdata/v1/SPY/quotes "HTTP/1.1 200 OK"
+2026-03-16 00:34:30,011 | INFO | SPY | RSI=34.24 | MACD_hist=-2.0224 | BB%B=-0.1197 | Sentiment=0.1156
+2026-03-16 00:34:30,218 | INFO | HTTP Request: GET https://api.schwabapi.com/marketdata/v1/pricehistory?symbol=QQQ&periodType=year&frequencyType=daily&frequency=1&startDate=1768455270012&endDate=1773635670012 "HTTP/1.1 200 OK"
+2026-03-16 00:34:30,389 | INFO | HTTP Request: GET https://api.schwabapi.com/marketdata/v1/QQQ/quotes "HTTP/1.1 200 OK"
+2026-03-16 00:34:30,694 | INFO | QQQ | RSI=44.82 | MACD_hist=-0.6596 | BB%B=-0.0529 | Sentiment=0.0936
+2026-03-16 00:34:30,900 | INFO | HTTP Request: GET https://api.schwabapi.com/marketdata/v1/pricehistory?symbol=AAPL&periodType=year&frequencyType=daily&frequency=1&startDate=1768455270694&endDate=1773635670694 "HTTP/1.1 200 OK"
+2026-03-16 00:34:31,040 | INFO | HTTP Request: GET https://api.schwabapi.com/marketdata/v1/AAPL/quotes "HTTP/1.1 200 OK"
+2026-03-16 00:34:31,348 | INFO | AAPL | RSI=29.91 | MACD_hist=-1.641 | BB%B=-0.0352 | Sentiment=0.2022
+2026-03-16 00:34:31,543 | INFO | HTTP Request: GET https://api.schwabapi.com/marketdata/v1/pricehistory?symbol=MSFT&periodType=year&frequencyType=daily&frequency=1&startDate=1768455271348&endDate=1773635671348 "HTTP/1.1 200 OK"
+2026-03-16 00:34:31,715 | INFO | HTTP Request: GET https://api.schwabapi.com/marketdata/v1/MSFT/quotes "HTTP/1.1 200 OK"
+2026-03-16 00:34:31,992 | INFO | MSFT | RSI=59.2 | MACD_hist=1.7402 | BB%B=0.3205 | Sentiment=0.2785
+2026-03-16 00:36:49,271 | INFO | Loading token from file tokens/schwab_token.json
+2026-03-16 00:36:49,594 | INFO | HTTP Request: GET https://api.schwabapi.com/trader/v1/accounts/accountNumbers "HTTP/1.1 200 OK"
+2026-03-16 00:36:49,595 | INFO | Using account: ...6039
+2026-03-16 00:36:49,806 | INFO | HTTP Request: GET https://api.schwabapi.com/marketdata/v1/pricehistory?symbol=SPY&periodType=year&frequencyType=daily&frequency=1&startDate=1768455409595&endDate=1773635809595 "HTTP/1.1 200 OK"
+2026-03-16 00:36:49,995 | INFO | HTTP Request: GET https://api.schwabapi.com/marketdata/v1/SPY/quotes "HTTP/1.1 200 OK"
+2026-03-16 00:36:50,610 | INFO | SPY | RSI=34.24 | MACD_hist=-2.0224 | BB%B=-0.1197 | Sentiment=0.1156
+2026-03-16 00:36:50,843 | INFO | HTTP Request: GET https://api.schwabapi.com/marketdata/v1/pricehistory?symbol=QQQ&periodType=year&frequencyType=daily&frequency=1&startDate=1768455410610&endDate=1773635810610 "HTTP/1.1 200 OK"
+2026-03-16 00:36:51,023 | INFO | HTTP Request: GET https://api.schwabapi.com/marketdata/v1/QQQ/quotes "HTTP/1.1 200 OK"
+2026-03-16 00:36:51,344 | INFO | QQQ | RSI=44.82 | MACD_hist=-0.6596 | BB%B=-0.0529 | Sentiment=0.0936
+2026-03-16 00:36:51,545 | INFO | HTTP Request: GET https://api.schwabapi.com/marketdata/v1/pricehistory?symbol=AAPL&periodType=year&frequencyType=daily&frequency=1&startDate=1768455411344&endDate=1773635811344 "HTTP/1.1 200 OK"
+2026-03-16 00:36:51,749 | INFO | HTTP Request: GET https://api.schwabapi.com/marketdata/v1/AAPL/quotes "HTTP/1.1 200 OK"
+2026-03-16 00:36:52,080 | INFO | AAPL | RSI=29.91 | MACD_hist=-1.641 | BB%B=-0.0352 | Sentiment=0.2022
+2026-03-16 00:36:52,081 | INFO | [DRY RUN] Processing signal: BUY 2x AAPL | RSI=29.91 + sentiment=0.2022 + MACD=-1.641
+2026-03-16 00:36:52,265 | INFO | HTTP Request: GET https://api.schwabapi.com/marketdata/v1/AAPL/quotes "HTTP/1.1 200 OK"
+2026-03-16 00:36:52,588 | INFO | HTTP Request: POST https://api.schwabapi.com/trader/v1/accounts/56D374DC07DC05DB87E6B3D6C8D16017DC1AC14C19980C5B9276DAFEEBF9BCF4/previewOrder "HTTP/1.1 200 OK"
+2026-03-16 00:36:52,589 | INFO | Dry run validated OK. Order would be: BUY 2x AAPL
+2026-03-16 00:36:53,288 | INFO | HTTP Request: GET https://api.schwabapi.com/marketdata/v1/pricehistory?symbol=MSFT&periodType=year&frequencyType=daily&frequency=1&startDate=1768455413092&endDate=1773635813092 "HTTP/1.1 200 OK"
+2026-03-16 00:36:53,453 | INFO | HTTP Request: GET https://api.schwabapi.com/marketdata/v1/MSFT/quotes "HTTP/1.1 200 OK"
+2026-03-16 00:36:53,763 | INFO | MSFT | RSI=59.2 | MACD_hist=1.7402 | BB%B=0.3205 | Sentiment=0.2785

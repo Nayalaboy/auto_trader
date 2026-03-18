@@ -1,0 +1,1 @@
+{"signal": {"symbol": "SPY", "side": "BUY", "quantity": 1, "reason": "RSI oversold (28) + positive sentiment score (0.72)", "confidence": 0.72, "strategy": "rsi_sentiment_v1"}, "status": "REJECTED", "order_id": null, "message": "Trade value $663.10 exceeds max $500.00. Reduce quantity to 0 shares.", "timestamp": "2026-03-14T12:49:33.286513"}

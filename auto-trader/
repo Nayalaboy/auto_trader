@@ -1,0 +1,26 @@
+# ======================
+# Schwab Trader API
+# ======================
+SCHWAB_APP_KEY=gdqm15AAYVK5HYuGIjOCGc93GEdfJfEki3xuhGdH81fIeLsY
+SCHWAB_APP_SECRET=JP0iVPAEsURQxEuJGKYznjx8voU1qtPfTokXNEXtGi6DlTwx3O7ISQKfRHALXAb0
+SCHWAB_CALLBACK_URL=https://127.0.0.1:8080/callback
+# Account hash - obtained after first auth
+SCHWAB_ACCOUNT_HASH=
+
+# ======================
+# Reddit API (PRAW)
+# ======================
+REDDIT_CLIENT_ID=your_reddit_client_id
+REDDIT_CLIENT_SECRET=your_reddit_client_secret
+REDDIT_USER_AGENT=OptionsTradingBot/1.0
+
+# ======================
+# NewsAPI
+# ======================
+NEWSAPI_KEY=your_newsapi_key
+
+# ======================
+# Trading Mode
+# ======================
+# Options: paper, live, analyze
+TRADING_MODE=paper

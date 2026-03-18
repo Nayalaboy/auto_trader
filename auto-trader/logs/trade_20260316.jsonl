@@ -1,0 +1,1 @@
+{"signal": {"symbol": "AAPL", "side": "BUY", "quantity": 2, "reason": "RSI=29.91 + sentiment=0.2022 + MACD=-1.641", "confidence": 0.187, "strategy": "rsi_macd_bb_sentiment_v1"}, "status": "DRY_RUN", "order_id": null, "message": "Dry run validated OK. Order would be: BUY 2x AAPL", "timestamp": "2026-03-16T00:36:52.589374"}
